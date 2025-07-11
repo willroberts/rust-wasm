@@ -15,6 +15,7 @@ DOCKER_BUILDKIT=1 podman build -t rust-wasm . --output build/ # or `make build`
 There is a Node.js application in `build/www` which imports WASM from `build/`.
 
 ```bash
+npm install --prefix build/www
 npm start --prefix build/www # or `make start`
 ```
 

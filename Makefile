@@ -5,4 +5,5 @@ build:
 .PHONY: start
 start:
 	@echo "Starting Node.js server; visit http://localhost:8080 to test."
+	npm install --prefix build/www
 	npm start --prefix build/www
