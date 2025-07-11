@@ -2,6 +2,8 @@
 
 A demo of WebAssembly via Rust and `wasm-pack`.
 
+Reference: https://rustwasm.github.io/docs/book/
+
 ## Compile WASM
 
 Use a multi-stage Docker build to compile Rust to WASM, and place the resulting code in `build/`.
