@@ -11,4 +11,9 @@ COPY . /wasm
 RUN wasm-pack build
 
 FROM scratch AS output
-COPY --from=builder /wasm/pkg/* /
+COPY --from=builder /wasm/pkg/package.json /
+COPY --from=builder /wasm/pkg/rust_wasm_bg.js /
+COPY --from=builder /wasm/pkg/rust_wasm_bg.wasm /
+COPY --from=builder /wasm/pkg/rust_wasm_bg.wasm.d.ts /
+COPY --from=builder /wasm/pkg/rust_wasm.d.ts /
+COPY --from=builder /wasm/pkg/rust_wasm.js /
