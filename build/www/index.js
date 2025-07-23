@@ -1,3 +1,3 @@
 import * as wasm from "rust-wasm";
 
-wasm.greet();
+wasm.show_time();
