@@ -18,11 +18,23 @@ pub fn get_time() -> String {
 }
 
 #[wasm_bindgen]
+pub fn change_title(s: &str) {
+    let window = web_sys::window().expect("window should exist in current context");
+    let document = window.document().expect("document should exist in current context");
+    document.set_title(s);
+}
+
+#[wasm_bindgen]
 pub fn change_body_content(s: &str) {
-    let window = web_sys::window().expect("windows should exist in current context");
+    let window = web_sys::window().expect("window should exist in current context");
     let document = window.document().expect("document should exist in current context");
     let body = document.body().expect("body should exist in current context");
     body.set_inner_html(s);
+}
+
+#[wasm_bindgen]
+pub fn show_alert(s: &str) {
+    alert(s);
 }
 
 #[wasm_bindgen]
